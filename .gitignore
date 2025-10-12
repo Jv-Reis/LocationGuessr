@@ -1,0 +1,8 @@
+# Ignorar o arquivo .env dentro da pasta backend
+backend/.env
+
+# Ignorar as pastas node_modules
+node_modules/
+backend/node_modules/
+
+# Outros arquivos e pastas a serem ignorados...

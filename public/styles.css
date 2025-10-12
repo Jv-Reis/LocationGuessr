@@ -1,0 +1,514 @@
+/* --- GERAL E FUNDO --- */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+    color: #D9B384;
+    background-color: #0D0D0D;
+}
+
+#pano {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+/* --- MENUS (GERAL) --- */
+#menu-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-box {
+    background: rgba(64, 38, 29, 0.85);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    border: 1px solid #A68160;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+    width: 380px;
+    box-sizing: border-box;
+}
+
+.menu-box h2, .menu-box h3, .menu-box h4, .menu-box p {
+    color: #D9B384;
+}
+
+.menu-box b {
+    color: #F2C46D;
+}
+
+.menu-box button {
+    width: 100%;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: transparent;
+    color: #F2C46D;
+    border: 2px solid #A68160;
+    box-shadow: none;
+    transition: all 0.2s ease-in-out;
+    margin-top: 20px;
+}
+
+.menu-box button:hover {
+    background-color: #F2C46D;
+    color: #40261D;
+    border-color: #F2C46D;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.menu-box button:disabled {
+    background-color: #40261D;
+    color: #A68160;
+    border-color: #40261D;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}
+
+.menu-box input {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    text-align: center;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 2px solid #A68160;
+    background-color: #0D0D0D;
+    color: #F2C46D;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+.menu-box input::placeholder {
+    color: rgba(242, 196, 109, 0.6);
+}
+
+.menu-box input:focus {
+    outline: none;
+    border-color: #F2C46D;
+}
+
+/* --- MENU PRINCIPAL --- */
+.main-menu-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-menu-wrapper h1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 10vw;
+    line-height: 0.9;
+    color: #F2C46D;
+    text-shadow: 0 0 10px rgba(242, 196, 109, 0.3);
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: -0.5vw;
+    font-weight: 900;
+}
+
+#main-menu {
+    width: 600px;
+}
+
+#game-modes {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+    align-items: center;
+}
+
+#game-modes button {
+    width: 80%;
+    font-size: 24px;
+    padding: 20px;
+}
+
+.how-to-play {
+    margin-top: 25px;
+}
+.how-to-play hr {
+    border-color: #40261D;
+}
+
+/* --- MENU DE CONFIGURAÇÃO DE SALA (NOVO LAYOUT) --- */
+#room-setup-menu .game-options-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin: 25px 0;
+}
+
+.option-item {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.input-stepper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.stepper-btn {
+    width: 40px !important;
+    height: 40px;
+    padding: 0 !important;
+    margin: 0 !important;
+    font-size: 24px;
+    line-height: 40px;
+    background-color: transparent;
+    border: 2px solid #A68160;
+    color: #A68160;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.2s ease;
+}
+
+.stepper-btn:hover {
+    background-color: #A68160 !important;
+    color: #40261D !important;
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+.input-stepper input {
+    width: 100px;
+    font-size: 2em;
+    margin: 0 !important;
+    -moz-appearance: textfield;
+}
+
+.input-stepper input::-webkit-outer-spin-button,
+.input-stepper input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.option-item.toggle-switch {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 250px;
+    margin: 10px 0;
+}
+
+.option-item.toggle-switch label {
+    font-weight: bold;
+}
+
+.switch-container {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch-container input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #40261D;
+    transition: .4s;
+    border-radius: 34px;
+    border: 1px solid #A68160;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 3px;
+    background-color: #D9B384;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #A68160;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+    background-color: #F2C46D;
+}
+
+.secondary-btn {
+    background-color: transparent !important;
+    color: #A68160 !important;
+    border: 2px solid #40261D !important;
+    margin-top: 10px !important;
+}
+
+.secondary-btn:hover {
+    background-color: #40261D !important;
+    color: #D9B384 !important;
+    border-color: #40261D !important;
+}
+
+/* --- ESTILOS PARA O SELETOR DE MODO DE JOGO --- */
+.select-wrapper {
+    position: relative;
+    width: 250px;
+    margin: 0 auto;
+}
+
+#game-mode-select {
+    width: 100%;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    border-radius: 5px;
+    border: 2px solid #A68160;
+    background-color: #0D0D0D;
+    color: #F2C46D;
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+#game-mode-select:focus {
+    outline: none;
+    border-color: #F2C46D;
+}
+
+.select-wrapper::after {
+    content: '▼';
+    font-size: 12px;
+    color: #A68160;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+/* --- MENU DO LOBBY --- */
+#lobby-players {
+    list-style: none;
+    padding: 0;
+    margin-top: 15px;
+    font-size: 1.1em;
+}
+
+#lobby-players li {
+    padding: 8px;
+    background-color: rgba(13, 13, 13, 0.5);
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+#lobby-menu .game-link-section {
+    margin-bottom: 30px;
+}
+
+#lobby-menu #game-link-input {
+    margin-bottom: 15px;
+    font-size: 14px;
+    text-decoration: underline;
+    cursor: pointer;
+    border: 1px solid #A68160;
+    color: #F2C46D;
+    background-color: #0D0D0D;
+    padding: 8px 12px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+#lobby-menu #game-link-input:hover {
+    border-color: #F2C46D;
+}
+
+#lobby-menu .name-prompt label {
+    font-weight: bold;
+    color: #D9B384;
+    display: block;
+    margin-bottom: 5px;
+}
+
+#lobby-menu #confirm-name-btn {
+    width: auto;
+    padding: 15px 40px;
+    font-size: 16px;
+    background-color: #40261D;
+    color: #F2C46D;
+    border: 2px solid #A68160;
+    border-radius: 5px;
+    box-shadow: none;
+    transition: all 0.2s ease-in-out;
+    margin-top: 25px;
+}
+
+#lobby-menu #confirm-name-btn:hover {
+    background-color: #F2C46D;
+    color: #40261D;
+    border-color: #F2C46D;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#lobby-menu #start-game-btn {
+    margin-top: 30px;
+}
+
+/* --- MAPA E HUD IN-GAME --- */
+#map-container {
+    position: absolute;
+    bottom: 20px;
+    right: 75px;
+    width: 400px;
+    height: 300px;
+    z-index: 7;
+    border: 3px solid #A68160;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+
+#map {
+    height: 100%;
+    width: 100%;
+}
+
+#result-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+}
+
+#round-result-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#in-game-ui {
+    position: absolute;
+    top: 0px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 4;
+    pointer-events: none;
+}
+
+#in-game-ui > * {
+    pointer-events: auto;
+}
+
+#score-info {
+    position: static;
+    width: 450px;
+    padding: 30px;
+    z-index: 5;
+}
+
+#guess-btn {
+    position: absolute;
+    bottom: 330px;
+    right: 75px;
+    width: 400px;
+    margin: 0;
+    padding: 15px 40px;
+    font-size: 22px;
+    background-color: #40261D;
+    color: #F2C46D;
+    border: 2px solid #A68160;
+    border-radius: 5px;
+    box-shadow: none;
+    transition: all 0.2s ease-in-out;
+}
+
+#guess-btn:hover {
+    background-color: #F2C46D;
+    color: #40261D;
+    border-color: #F2C46D;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#next-round-btn {
+    position: static;
+    width: 100%;
+    margin-top: 25px;
+    padding: 15px 40px;
+    font-size: 22px;
+    background-color: #F2C46D;
+    color: #40261D;
+    border: 2px solid #F2C46D;
+    border-radius: 5px;
+    box-shadow: none;
+    transition: all 0.2s ease-in-out;
+}
+
+#next-round-btn:hover {
+    background-color: #D9B384;
+    border-color: #D9B384;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#game-status-hud {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: auto;
+    padding: 10px 20px;
+    z-index: 5;
+    background: rgba(64, 38, 29, 0.75);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+#game-status-hud p {
+    margin: 0;
+    font-size: 18px;
+}
