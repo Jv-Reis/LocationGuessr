@@ -1,0 +1,12 @@
+{
+  "name": "locationguessr",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Manifesto de dependências pra build da Vercel — api/index.js reexporta backend/server.js, então precisa das mesmas dependências instaláveis a partir da raiz do projeto. Pra rodar localmente, use backend/ (veja README.md).",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.111.0",
+    "axios": "^1.12.2",
+    "dotenv": "^17.4.2",
+    "express": "^5.1.0"
+  }
+}
