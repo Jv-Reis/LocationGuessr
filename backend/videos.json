@@ -1,0 +1,16 @@
+[
+  { "id": "665S3GsM-Kc", "title": "Bologna, Itália", "lat": 44.4939, "lng": 11.3428, "region": "europe", "startSeconds": 45 },
+  { "id": "WkL2AGqWAms", "title": "Amsterdã, Holanda", "lat": 52.3730, "lng": 4.8926, "region": "europe", "startSeconds": 45 },
+  { "id": "sW0EENhO07g", "title": "Veneza, Itália", "lat": 45.4343, "lng": 12.3388, "region": "europe", "startSeconds": 67 },
+  { "id": "zuWzfzbQNjc", "title": "Florença, Itália", "lat": 43.7731, "lng": 11.2560, "region": "europe", "startSeconds": 20 },
+  { "id": "djFJaNsVWNY", "title": "Roma, Itália", "lat": 41.9060, "lng": 12.4823, "region": "europe", "startSeconds": 43 },
+  { "id": "wlSXGmuMeCU", "title": "Milão, Itália", "lat": 45.4642, "lng": 9.1900, "region": "europe", "startSeconds": 45 },
+  { "id": "6pQnwh8c0hI", "title": "Tóquio (Ayase), Japão", "lat": 35.7745, "lng": 139.8194, "region": "asia", "startSeconds": 69 },
+  { "id": "-DUXZamiUnc", "title": "Bangkok (Cidade Velha), Tailândia", "lat": 13.7590, "lng": 100.4977, "region": "asia", "startSeconds": 61 },
+  { "id": "Cy15R6PCOHM", "title": "Nova York (Union Square), EUA", "lat": 40.7359, "lng": -73.9911, "region": "north_america", "startSeconds": 45 },
+  { "id": "6w8Bh_DbgcY", "title": "Nova York (Billionaires' Row), EUA", "lat": 40.7648, "lng": -73.9808, "region": "north_america", "startSeconds": 20 },
+  { "id": "RNORODJUCBY", "title": "São Paulo (Av. Paulista), Brasil", "lat": -23.5613, "lng": -46.6565, "region": "brazil", "startSeconds": 20 },
+  { "id": "mYSf_k9VKKs", "title": "Rio de Janeiro (Copacabana/Ipanema), Brasil", "lat": -22.9711, "lng": -43.1822, "region": "brazil", "startSeconds": 30 },
+  { "id": "VuZNHjkZisk", "title": "Sydney (CBD), Austrália", "lat": -33.8730, "lng": 151.2070, "region": "oceania", "startSeconds": 20 },
+  { "id": "VEKE9lJ0Kk0", "title": "Cidade do Cabo (CBD), África do Sul", "lat": -33.9249, "lng": 18.4241, "region": "africa", "startSeconds": 25 }
+]

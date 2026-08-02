@@ -1,0 +1,81 @@
+{
+    "continent": {
+        "name": "Continent",
+        "description": "",
+        "author": "BilelJegham",
+        "imageUrl": "https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&h=230",
+        "data": {
+            "urlArea": "https://raw.githubusercontent.com/GeoGuess/GeoGuess-Maps/main/public/geojson/areas/continents.geojson",
+            "type": "polygon",
+            "pathKey": "continent"
+        }
+    },
+    "france-region": {
+        "name": "France Region",
+        "description": "",
+        "author": "BilelJegham, gregoiredavid",
+        "imageUrl": "https://images.unsplash.com/photo-1588607327673-83b8f3791d6a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&h=230",
+        "data": {
+            "bbox": [-5.4517733, 41.2611155, 9.8282225, 51.3055721],
+            "urlArea": "https://raw.githubusercontent.com/gregoiredavid/france-geojson/master/regions-version-simplifiee.geojson",
+            "type": "nominatim",
+            "pathKey": "nom",
+            "nominatimResultPath": "address.state",
+            "nominatimQueryParams": { "zoom": "5", "addressdetails": "1", "accept-language": "fr" }
+        }
+    },
+    "france-county": {
+        "name": "France County",
+        "description": "",
+        "author": "BilelJegham, gregoiredavid",
+        "imageUrl": "https://images.unsplash.com/photo-1634745521698-3b8307f30543?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&h=230",
+        "data": {
+            "bbox": [-5.4517733, 41.2611155, 9.8282225, 51.3055721],
+            "urlArea": "https://raw.githubusercontent.com/gregoiredavid/france-geojson/master/departements-version-simplifiee.geojson",
+            "type": "nominatim",
+            "pathKey": "nom",
+            "nominatimResultPath": "address.county",
+            "nominatimQueryParams": { "zoom": "8", "addressdetails": "1", "accept-language": "fr" }
+        }
+    },
+    "usa-state": {
+        "name": "US States",
+        "description": "",
+        "author": "BilelJegham",
+        "imageUrl": "https://images.unsplash.com/photo-1534706438758-534c634c4591?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&h=230",
+        "data": {
+            "bbox": [-171.79111060289117, 18.916190000000142, -66.96466, 71.35776357694175],
+            "urlArea": "https://raw.githubusercontent.com/martynafford/natural-earth-geojson/master/110m/cultural/ne_110m_admin_1_states_provinces.json",
+            "type": "nominatim",
+            "pathKey": "name",
+            "nominatimResultPath": "address.state",
+            "nominatimQueryParams": { "zoom": "5", "addressdetails": "1", "accept-language": "en" }
+        }
+    },
+    "mexico-states": {
+        "name": "Mexico States",
+        "description": "",
+        "author": "BilelJegham, angelnmara",
+        "imageUrl": "https://images.unsplash.com/photo-1583422790973-03d1901612dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&h=230",
+        "data":{
+            "bbox": [-118.366000,14.534700,-86.723700,32.718200],
+            "urlArea": "https://raw.githubusercontent.com/GeoGuess/GeoGuess-Maps/main/public/geojson/areas/mexico_states.geojson",
+            "type": "nominatim",
+            "pathKey": "name",
+            "nominatimResultPath": "address.state",
+            "nominatimFallbackResultPath": "display_name",
+            "nominatimQueryParams": { "zoom": "5", "accept-language": "es" }
+        }
+    },
+    "spain-provinces": {
+        "name": "Spain provinces",
+        "description": "",
+        "author": "Rukant",
+        "imageUrl": "https://images.unsplash.com/photo-1559564477-f837b990831a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjg3OTd9&auto=format&fit=crop&w=500&h=230",
+        "data": {
+            "urlArea": "https://raw.githubusercontent.com/GeoGuess/GeoGuess-Maps/main/public/geojson/areas/spain_provinces.geojson",
+            "type": "polygon",
+            "pathKey": "provincia"
+        }
+    }
+}

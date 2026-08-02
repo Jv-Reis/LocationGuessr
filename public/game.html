@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LocationGuessr</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div id="pano"></div>
+
+    <!-- Transição entre rounds -->
+    <div id="round-transition"></div>
+
+    <!-- Contagem regressiva -->
+    <div id="countdown-overlay">
+        <div id="countdown-number"></div>
+    </div>
+
+    <!-- Bússola -->
+    <div id="compass">
+        <div id="compass-ring">
+            <span class="compass-label compass-n">N</span>
+            <div id="compass-needle-wrap">
+                <div id="compass-needle-north"></div>
+                <div id="compass-needle-south"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="menu-container">
+        <!-- Configurar sala: modo Clássico (Street View) -->
+        <div id="classic-setup-menu" class="menu-box" style="display: none;">
+            <h2>🗺️ Configurar Clássico</h2>
+
+            <div class="game-options-container">
+                <div class="option-item">
+                    <label for="classic-region-select">Região</label>
+                    <div class="select-wrapper">
+                        <select id="classic-region-select">
+                            <option value="world">🌍 Mundial</option>
+                            <option value="brazil">🇧🇷 Brasil</option>
+                            <option value="south_america">🌎 América do Sul</option>
+                            <option value="north_america">🗽 América do Norte</option>
+                            <option value="europe">🏰 Europa</option>
+                            <option value="africa">🌍 África</option>
+                            <option value="asia">🏯 Ásia</option>
+                            <option value="oceania">🦘 Oceania</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="option-item toggle-switch">
+                    <label for="classic-restrict-movement-checkbox">Sem Mover (Difícil)</label>
+                    <div class="switch-container">
+                        <input type="checkbox" id="classic-restrict-movement-checkbox">
+                        <label for="classic-restrict-movement-checkbox" class="slider"></label>
+                    </div>
+                </div>
+
+                <div class="option-item">
+                    <label for="classic-rounds-input">Rounds</label>
+                    <div class="input-stepper">
+                        <button class="stepper-btn" id="classic-rounds-decrement">←</button>
+                        <input type="number" id="classic-rounds-input" value="5" min="1" max="10">
+                        <button class="stepper-btn" id="classic-rounds-increment">→</button>
+                    </div>
+                </div>
+
+                <div class="option-item toggle-switch">
+                    <label for="classic-time-toggle-checkbox">Tempo Infinito</label>
+                    <div class="switch-container">
+                        <input type="checkbox" id="classic-time-toggle-checkbox">
+                        <label for="classic-time-toggle-checkbox" class="slider"></label>
+                    </div>
+                </div>
+
+                <div class="option-item" id="classic-time-selector-container">
+                    <label for="classic-time-input">Duração (segundos)</label>
+                    <div class="input-stepper">
+                        <button class="stepper-btn" id="classic-time-decrement">←</button>
+                        <input type="number" id="classic-time-input" value="120" min="10" step="10">
+                        <button class="stepper-btn" id="classic-time-increment">→</button>
+                    </div>
+                </div>
+            </div>
+
+            <button id="classic-create-game-btn">Confirmar e Criar Sala</button>
+            <button id="classic-back-btn" class="secondary-btn">Voltar</button>
+        </div>
+
+        <!-- Configurar sala: modo Vídeo Guesser -->
+        <div id="video-setup-menu" class="menu-box" style="display: none;">
+            <h2>🎥 Configurar Vídeo Guesser</h2>
+
+            <div class="game-options-container">
+                <div class="option-item">
+                    <label for="video-region-select">Região</label>
+                    <div class="select-wrapper">
+                        <select id="video-region-select">
+                            <option value="world">🌍 Mundial</option>
+                            <option value="brazil">🇧🇷 Brasil</option>
+                            <option value="south_america">🌎 América do Sul</option>
+                            <option value="north_america">🗽 América do Norte</option>
+                            <option value="europe">🏰 Europa</option>
+                            <option value="africa">🌍 África</option>
+                            <option value="asia">🏯 Ásia</option>
+                            <option value="oceania">🦘 Oceania</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="option-item">
+                    <label for="video-rounds-input">Rounds</label>
+                    <div class="input-stepper">
+                        <button class="stepper-btn" id="video-rounds-decrement">←</button>
+                        <input type="number" id="video-rounds-input" value="5" min="1" max="10">
+                        <button class="stepper-btn" id="video-rounds-increment">→</button>
+                    </div>
+                </div>
+
+                <div class="option-item toggle-switch">
+                    <label for="video-time-toggle-checkbox">Tempo Infinito</label>
+                    <div class="switch-container">
+                        <input type="checkbox" id="video-time-toggle-checkbox">
+                        <label for="video-time-toggle-checkbox" class="slider"></label>
+                    </div>
+                </div>
+
+                <div class="option-item" id="video-time-selector-container">
+                    <label for="video-time-input">Duração (segundos)</label>
+                    <div class="input-stepper">
+                        <button class="stepper-btn" id="video-time-decrement">←</button>
+                        <input type="number" id="video-time-input" value="120" min="10" step="10">
+                        <button class="stepper-btn" id="video-time-increment">→</button>
+                    </div>
+                </div>
+            </div>
+
+            <button id="video-create-game-btn">Confirmar e Criar Sala</button>
+            <button id="video-back-btn" class="secondary-btn">Voltar</button>
+        </div>
+
+        <div id="join-room-menu" class="menu-box" style="display: none;">
+            <h2>Entrar na Sala</h2>
+            <p>Digite o código da sala:</p>
+            <input type="text" id="join-code-input" placeholder="Ex: AB12CD" maxlength="6" style="text-transform: uppercase; letter-spacing: 4px; font-size: 24px;">
+            <p id="join-error-msg" style="color: #e74c3c; display: none; margin-top: 8px;">Sala não encontrada!</p>
+            <button id="confirm-join-btn">Entrar</button>
+            <button id="back-from-join-btn" class="secondary-btn">Voltar</button>
+        </div>
+
+        <div id="lobby-menu" class="menu-box" style="display: none;">
+            <h2>Entrou na Sala!</h2>
+            <div class="game-link-section">
+                <p>Envie este link para seus amigos:</p>
+                <div class="copy-link-wrapper">
+                    <input type="text" id="game-link-input" readonly>
+                    <button id="copy-link-btn" title="Copiar link">📋</button>
+                </div>
+            </div>
+            <div id="name-prompt" class="name-prompt">
+                <hr style="border-color: #40261D;">
+                <label for="player-name-input">Seu Nome:</label>
+                <input type="text" id="player-name-input" placeholder="Digite seu nome aqui" maxlength="15">
+                <button id="confirm-name-btn">Confirmar Nome</button>
+            </div>
+            <div id="player-list-section" style="display: none;">
+                <h3>Jogadores na sala:</h3>
+                <ul id="lobby-players"></ul>
+                <button id="start-game-btn" style="display: none;">Iniciar Partida para Todos!</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="in-game-ui" style="display: none;">
+        <button id="home-btn" title="Voltar ao início" onclick="window.location.href='/'">🏠</button>
+        <div id="game-status-hud" class="menu-box">
+            <p style="text-align: center;">
+                <b>
+                    <span id="round-display">Round 1 / 3</span>
+                    | ⏳ <span id="timer-display">--:--</span>
+                    | <span id="region-display"></span>
+                </b>
+            </p>
+        </div>
+        <div id="result-text" class="menu-box" style="display: none;"></div>
+        <button id="guess-btn">Adivinhar!</button>
+    </div>
+
+    <div id="round-result-container" style="display: none;">
+        <div id="score-info" class="menu-box">
+            <hr>
+            <div id="round-results-display"></div>
+            <div id="overall-standings-display" style="margin-top: 15px;"></div>
+            <button id="next-round-btn" style="display: none;">Próximo Round</button>
+        </div>
+    </div>
+
+    <div id="map-container" style="display: none;">
+        <div id="map"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="game.js"></script>
+    <script>
+        // Busca a config do servidor, cria o cliente do Supabase e carrega o Maps API
+        fetch('/api/config')
+            .then(r => r.json())
+            .then(cfg => {
+                window.supabaseClient = supabase.createClient(cfg.supabaseUrl, cfg.supabasePublishableKey);
+                const script = document.createElement('script');
+                script.src = `https://maps.googleapis.com/maps/api/js?key=${cfg.googleMapsKey}&callback=initGame`;
+                script.async = true;
+                document.body.appendChild(script);
+            })
+            .catch(() => alert('Erro ao carregar configuração do servidor.'));
+    </script>
+</body>
+
+</html>
